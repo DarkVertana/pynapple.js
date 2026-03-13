@@ -13,6 +13,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
 
+from core.db.database import init_db
+
 ROOT     = Path(__file__).parent.parent.parent
 DEV_DIR  = ROOT / "pages" / ".dev"
 DIST_DIR = ROOT / "pages" / "dist"
@@ -170,6 +172,8 @@ def run(mode="dev"):
     PynappleHandler.mode      = mode
     PynappleHandler.serve_dir = DEV_DIR if mode == "dev" else DIST_DIR
     PynappleHandler.verbose   = (mode == "dev")
+
+    init_db()
 
     if mode == "dev":
         _start_reload_watcher()

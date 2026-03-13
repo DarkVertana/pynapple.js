@@ -10,3 +10,4 @@ pages/.dev/
 pages/index.html
 package-lock.json
 .claude/
+store.db
