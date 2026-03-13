@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+venv/
+.venv/
+.python/
+node_modules/
+pages/dist/
+pages/.dev/
+pages/index.html
+package-lock.json
+.claude/

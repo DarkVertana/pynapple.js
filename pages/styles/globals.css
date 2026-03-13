@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  html, body {
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    background: #fafaf9;
+    color: #1c1a14;
+    margin: 0;
+  }
+  a { text-decoration: none; }
+}
+
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: #d9770630; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #d9770660; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.fade-up   { animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.fade-up-1 { animation-delay: 0.08s; }
+.fade-up-2 { animation-delay: 0.16s; }
+.fade-up-3 { animation-delay: 0.26s; }
+.fade-up-4 { animation-delay: 0.38s; }
+.fade-in   { animation: fade-in 0.4s ease both; }
+.float     { animation: float 4s ease-in-out infinite; }
+.spin-slow { animation: spin-slow 18s linear infinite; }
