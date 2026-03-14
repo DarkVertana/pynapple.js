@@ -59,9 +59,11 @@ def ensure_py_deps():
         print("  ⚠  requirements.txt not found — skipping")
         return
     print("  →  Installing Python dependencies …")
-    run([str(VENV_PIP), "install", "--quiet", "--upgrade", "pip"],
-        stdout=subprocess.DEVNULL)
-    result = run(
+    subprocess.run(
+        [str(VENV_PIP), "install", "--quiet", "--upgrade", "pip"],
+        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+    )
+    result = subprocess.run(
         [str(VENV_PIP), "install", "--quiet", "-r", str(REQUIREMENTS)],
         capture_output=True, text=True,
     )

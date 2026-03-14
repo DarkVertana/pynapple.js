@@ -13,6 +13,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
 
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
 from core.db.database import init_db
 
 ROOT     = Path(__file__).parent.parent.parent
