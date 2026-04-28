@@ -29,7 +29,7 @@ export default function Header({ dark, setDark, breadcrumb }: HeaderProps) {
       <div className="flex items-center gap-2">
         <a href="#/" className="flex items-center gap-2 no-underline">
           <span className="text-sm">🍍</span>
-          <span className="text-stone-800 dark:text-stone-100 font-semibold text-sm tracking-tight">pynapple js</span>
+          <span className="text-stone-800 dark:text-stone-100 font-semibold text-sm tracking-tight">pynaple js</span>
         </a>
         {breadcrumb && (
           <>
@@ -40,7 +40,9 @@ export default function Header({ dark, setDark, breadcrumb }: HeaderProps) {
       </div>
       <div className="flex items-center gap-5">
         <div className="flex items-center gap-5 text-xs text-stone-400 dark:text-stone-500">
+          <a href="#/blog" className="hover:text-stone-700 dark:hover:text-stone-200 transition-colors duration-200 no-underline">blog</a>
           <a href="#/docs" className="hover:text-stone-700 dark:hover:text-stone-200 transition-colors duration-200 no-underline">docs</a>
+          <a href="#/admin" className="hover:text-stone-700 dark:hover:text-stone-200 transition-colors duration-200 no-underline">admin</a>
           <span className="hover:text-stone-700 dark:hover:text-stone-200 cursor-pointer transition-colors duration-200">github</span>
         </div>
         <button

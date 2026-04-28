@@ -1,5 +1,5 @@
 /**
- * core/engine/build.js — pynapple js · production build
+ * core/engine/build.js — pynaple js · production build
  *
  * 1. esbuild bundles  pages/hello.tsx  →  pages/dist/bundle.js  (minified)
  *    PostCSS + Tailwind runs inline     →  pages/dist/bundle.css (minified)
@@ -62,7 +62,7 @@ fs.writeFileSync(path.join(DIST, 'index.html'), `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>pynapple js</title>
+  <title>pynaple js</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍍</text></svg>"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>

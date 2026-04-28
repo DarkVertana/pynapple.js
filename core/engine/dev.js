@@ -1,5 +1,5 @@
 /**
- * core/engine/dev.js — pynapple js · build watcher (no HTTP server)
+ * core/engine/dev.js — pynaple js · build watcher (no HTTP server)
  *
  * Python handles the single unified server on :2000.
  * This process only does:
@@ -80,7 +80,7 @@ const ctx = await esbuild.context({
   plugins: [
     cssPlugin,
     {
-      name: 'pynapple-signal',
+      name: 'pynaple-signal',
       setup(build) {
         build.onEnd(result => {
           if (result.errors.length === 0) {

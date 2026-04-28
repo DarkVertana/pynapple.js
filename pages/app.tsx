@@ -33,7 +33,7 @@ export default function App({ dark, setDark }: AppProps) {
           {/* Headline */}
           <div className="fade-up fade-up-2 space-y-3 mb-8">
             <h1 className="text-[2.75rem] font-semibold text-stone-900 dark:text-white tracking-[-0.03em] leading-none">
-              pynapple js
+              pynaple js
             </h1>
             <p className="text-stone-400 dark:text-stone-500 text-[15px] max-w-[22rem] mx-auto leading-relaxed font-normal">
               Python&nbsp;+&nbsp;Node.js on a single port.
@@ -72,7 +72,9 @@ export default function App({ dark, setDark }: AppProps) {
 
         {/* Footer */}
         <footer className="relative flex items-center justify-center gap-4 py-6">
-          <span className="text-[11px] text-stone-300 dark:text-stone-600 tracking-widest uppercase">pynapple js</span>
+          <span className="text-[11px] text-stone-300 dark:text-stone-600 tracking-widest uppercase">pynaple js</span>
+          <span className="text-stone-200 dark:text-stone-700 text-xs">·</span>
+          <a href="#/blog" className="text-[11px] text-stone-300 dark:text-stone-600 hover:text-stone-500 dark:hover:text-stone-400 transition-colors duration-200 no-underline tracking-widest uppercase">blog</a>
           <span className="text-stone-200 dark:text-stone-700 text-xs">·</span>
           <a href="#/docs" className="text-[11px] text-stone-300 dark:text-stone-600 hover:text-stone-500 dark:hover:text-stone-400 transition-colors duration-200 no-underline tracking-widest uppercase">docs</a>
         </footer>

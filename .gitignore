@@ -11,3 +11,6 @@ pages/index.html
 package-lock.json
 .claude/
 store.db
+store.db-shm
+store.db-wal
+uploads/

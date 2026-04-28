@@ -1,14 +1,17 @@
 """
-core/db/database.py — SQLite connection + schema bootstrap
+core/db/database.py — SQLite connection + ORM migration bootstrap
 """
 
 import sqlite3
+import sys
 import threading
 from pathlib import Path
 
-ROOT       = Path(__file__).parent.parent.parent
-DB_PATH    = ROOT / "store.db"
-SCHEMA_SQL = Path(__file__).parent / "schema.sql"
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+from core import ui
+
+ROOT    = Path(__file__).parent.parent.parent
+DB_PATH = ROOT / "store.db"
 
 # One connection per thread (SQLite is not thread-safe by default)
 _local = threading.local()
@@ -26,13 +29,24 @@ def get_conn() -> sqlite3.Connection:
 
 
 def init_db():
-    """Run schema.sql to create all tables (idempotent)."""
-    sql = SCHEMA_SQL.read_text()
-    conn = get_conn()
-    conn.executescript(sql)
-    conn.commit()
-    print("  ✓  Database ready →", DB_PATH)
+    """Apply pending ORM migrations (auto-creates tables on first run)."""
+    # Import models so they register with the ORM registry
+    import core.db.models  # noqa: F401
+    from core.db.orm.migration import migrate_up, get_pending_migrations
 
+    conn = get_conn()
+    pending = get_pending_migrations(conn)
+
+    if pending:
+        ui.info(f"Applying {len(pending)} migration(s)")
+        applied = migrate_up(conn)
+        for name in applied:
+            ui.ok(name)
+
+    ui.ok(f"Database ready {ui.dim('→')} {ui.dim(str(DB_PATH))}")
+
+
+# ── Raw query helpers (still available as escape hatches) ─────────────────────
 
 def query(sql: str, params: tuple = ()) -> list[sqlite3.Row]:
     """SELECT — returns list of Row objects."""

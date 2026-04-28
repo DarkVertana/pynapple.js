@@ -59,9 +59,9 @@ const SECTIONS: Section[] = [
     label: 'Overview',
     content: () => (
       <div>
-        <H1>pynapple js</H1>
+        <H1>pynaple js</H1>
         <P>
-          pynapple js is a minimal, zero-magic web framework that runs Python and Node.js
+          pynaple js is a minimal, zero-magic web framework that runs Python and Node.js
           on a single port. No proxies, no config hell — just a clean build engine
           and a Python stdlib HTTP server working together.
         </P>
@@ -215,7 +215,7 @@ def handle(handler):
     handler._respond(
         200,
         "application/json",
-        b'{"message": "Hello from pynapple!"}'
+        b'{"message": "Hello from pynaple!"}'
     )`}</Pre>
         <H2>Registering in the server</H2>
         <Pre>{`# core/serve/server.py
@@ -239,7 +239,7 @@ def do_POST(self):
         handler.wfile.write(chunk.encode())
         handler.wfile.flush()`}</Pre>
         <Note>
-          pynapple uses <Code>ThreadingHTTPServer</Code> — each request runs in its
+          pynaple uses <Code>ThreadingHTTPServer</Code> — each request runs in its
           own thread, so streaming handlers don't block other requests.
         </Note>
       </div>
@@ -315,7 +315,7 @@ PORT=2000`}</Pre>
         </P>
         <Pre>{`python3 app.py build`}</Pre>
         <Note>
-          pynapple's server has zero external Python runtime dependencies beyond
+          pynaple's server has zero external Python runtime dependencies beyond
           the packages in <Code>requirements.txt</Code>. The stdlib HTTP server
           is production-capable for moderate traffic.
         </Note>

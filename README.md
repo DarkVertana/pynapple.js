@@ -2,7 +2,7 @@
 
 <br />
 
-# 🍍 pynapple.js
+# 🍍 pynaple.js
 
 **Python + Node.js on a single port. Built from scratch. No magic.**
 
@@ -15,25 +15,32 @@
 <br />
 
 ```
-┌──────────────────────────────────────┐
-│  python3 app.py dev                  │
-│                                      │
-│  ✓  Virtual environment ready        │
-│  ✓  Python dependencies installed    │
-│  ✓  Node dependencies ready          │
-│                                      │
-│  pynapple js  ·  unified  :2000      │
-│  http://localhost:2000               │
-└──────────────────────────────────────┘
+$ python3 app.py dev
+
+  mode  development
+
+  [1/2]  Python environment
+  ✓  Virtual environment found
+  ✓  Python dependencies installed
+  ✓  Python packages verified
+
+  [2/2]  Node.js
+  ✓  Node dependencies ready
+
+  ╭─ pynaple js · dev · :2000 ─────────╮
+  │                                     │
+  │  local   http://localhost:2000      │
+  │                                     │
+  ╰─────────────────────────────────────╯
 ```
 
 </div>
 
 ---
 
-## What is pynapple.js?
+## What is pynaple.js?
 
-pynapple.js is a **zero-magic full-stack framework** that runs a React + TypeScript frontend and a Python backend on a **single unified port** — no proxies, no config files, no ceremony.
+pynaple.js is a **zero-magic full-stack framework** that runs a React + TypeScript frontend and a Python backend on a **single unified port** — no proxies, no config files, no ceremony.
 
 One command to dev. One command to build. That's it.
 
@@ -42,7 +49,7 @@ One command to dev. One command to build. That's it.
 ## Architecture
 
 ```
-pynapple.js
+pynaple.js
 │
 ├── app.py                    ← Single entry point (dev | build)
 │

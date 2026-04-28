@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import Home from './app'
 import Docs from './docs'
+import Blog from './blog'
+import Admin from './admin'
 
 function Router() {
   const [hash, setHash] = useState(window.location.hash)
@@ -20,9 +22,10 @@ function Router() {
     return () => window.removeEventListener('hashchange', handler)
   }, [])
 
-  return hash.startsWith('#/docs')
-    ? <Docs dark={dark} setDark={setDark} />
-    : <Home dark={dark} setDark={setDark} />
+  if (hash.startsWith('#/admin')) return <Admin dark={dark} setDark={setDark} />
+  if (hash.startsWith('#/blog')) return <Blog dark={dark} setDark={setDark} />
+  if (hash.startsWith('#/docs')) return <Docs dark={dark} setDark={setDark} />
+  return <Home dark={dark} setDark={setDark} />
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
